@@ -14,7 +14,6 @@
       --black: #111;
     }
 
-    /* Reset simples */
     * { box-sizing: border-box; }
 
     html, body {
@@ -25,9 +24,8 @@
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       min-height: 100vh;
-      background-color: var(--yellow); /* fallback amarelo */
-      /* 🎨 FUNDO DO SITE - Troque o nome do arquivo aqui */
-      background-image: url("fundo.png");
+      background-color: var(--yellow);
+      background-image: url("imagens/fundo.png"); /* Fundo dentro da pasta imagens */
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -38,20 +36,18 @@
       overflow: hidden;
     }
 
-    /* 🖼️ PERSONAGEM PNG - grande no fundo */
     .character {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 80vw;      /* ocupa 80% da largura da tela */
-      max-width: 1200px;/* limite máximo */
-      opacity: 0.30;    /* transparência */
+      width: 80vw;
+      max-width: 1200px;
+      opacity: 0.30;
       z-index: 0;
       pointer-events: none;
     }
 
-    /* Conteúdo principal (fica acima do personagem) */
     .container {
       position: relative;
       z-index: 1;
@@ -59,7 +55,6 @@
       margin: 0 auto;
     }
 
-    /* 📷 FOTO DE PERFIL */
     .profile-pic {
       width: 120px;
       height: 120px;
@@ -85,7 +80,6 @@
       margin-bottom: 20px;
     }
 
-    /* 🔗 LINKS */
     .links {
       display: flex;
       flex-direction: column;
@@ -122,7 +116,6 @@
       color: var(--black);
     }
 
-    /* Responsivo - telas pequenas */
     @media (max-width: 420px) {
       .container { padding: 0 8px; }
       .character { width: 110vw; opacity: 0.25; }
@@ -132,41 +125,32 @@
 </head>
 <body>
 
-  <!-- 🖼️ PERSONAGEM PNG NO FUNDO -->
-  <!-- Troque "personagem.png" pelo nome da sua imagem -->
-  <img src="personagem.png" alt="Personagem" class="character">
+  <!-- Personagem no fundo -->
+  <img src="imagens/personagem.png" alt="Personagem" class="character">
 
   <div class="container">
-    <!-- 📷 FOTO DE PERFIL -->
-    <!-- Troque "perfil.jpg" pelo nome da sua imagem -->
-    <img src="perfil.jpg" alt="Minha Foto" class="profile-pic">
+    <!-- Foto de perfil -->
+    <img src="imagens/perfil.jpg" alt="Minha Foto" class="profile-pic">
 
-    <!-- Nome -->
     <h1>Katak</h1>
     <p class="bio">Aqui vai uma frase curta sobre você ou seu projeto</p>
 
-    <!-- 🔗 LINKS PARA REDES SOCIAIS -->
     <div class="links">
       <a href="https://www.instagram.com/esteffany_valandro" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-instagram"></i> Instagram
       </a>
-
       <a href="https://www.youtube.com/@soukateh" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-youtube"></i> YouTube
       </a>
-
       <a href="https://www.tiktok.com/@soukateh" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-tiktok"></i> TikTok
       </a>
-
       <a href="https://x.com/SouKateh" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-x-twitter"></i> Twitter (X)
       </a>
-
       <a href="https://discord.gg/BEye7nkC" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-discord"></i> Discord
       </a>
-
       <a href="https://www.twitch.tv/soukateh" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-twitch"></i> Twitch
       </a>
