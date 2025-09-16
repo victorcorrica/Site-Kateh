@@ -14,6 +14,7 @@
       --black: #111;
     }
 
+    /* Reset simples */
     * { box-sizing: border-box; }
 
     html, body {
@@ -24,8 +25,8 @@
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       min-height: 100vh;
-      background-color: var(--yellow);
-      background-image: url("imagens/fundo.png"); /* Fundo dentro da pasta imagens */
+      background-color: var(--yellow); /* fallback amarelo */
+      background-image: url("imagens/fundolikkateh.png"); /* Fundo */
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -36,6 +37,7 @@
       overflow: hidden;
     }
 
+    /* Personagem PNG grande no fundo */
     .character {
       position: absolute;
       top: 50%;
@@ -48,6 +50,7 @@
       pointer-events: none;
     }
 
+    /* Conteúdo principal */
     .container {
       position: relative;
       z-index: 1;
@@ -125,12 +128,12 @@
 </head>
 <body>
 
-  <!-- Personagem no fundo -->
-  <img src="imagens/personagem.png" alt="Personagem" class="character">
+  <!-- Personagem PNG grande -->
+  <img src="imagens/iconKateh1.png" alt="Personagem" class="character">
 
   <div class="container">
     <!-- Foto de perfil -->
-    <img src="imagens/perfil.jpg" alt="Minha Foto" class="profile-pic">
+    <img src="imagens/profile.jpg" alt="Minha Foto" class="profile-pic">
 
     <h1>Katak</h1>
     <p class="bio">Aqui vai uma frase curta sobre você ou seu projeto</p>
@@ -139,18 +142,23 @@
       <a href="https://www.instagram.com/esteffany_valandro" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-instagram"></i> Instagram
       </a>
+
       <a href="https://www.youtube.com/@soukateh" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-youtube"></i> YouTube
       </a>
+
       <a href="https://www.tiktok.com/@soukateh" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-tiktok"></i> TikTok
       </a>
+
       <a href="https://x.com/SouKateh" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-x-twitter"></i> Twitter (X)
       </a>
+
       <a href="https://discord.gg/BEye7nkC" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-discord"></i> Discord
       </a>
+
       <a href="https://www.twitch.tv/soukateh" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-twitch"></i> Twitch
       </a>
