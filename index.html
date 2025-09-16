@@ -71,7 +71,7 @@
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 2rem; /* aumentei */
       margin: 6px 0;
       color: var(--black);
     }
@@ -85,7 +85,7 @@
     .links {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px; /* mais espaço */
       margin: 0 auto 30px;
       padding: 0 10px;
     }
@@ -94,23 +94,26 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 14px;
+      gap: 14px;
+      padding: 16px;
       background-color: var(--black);
       color: var(--yellow);
       text-decoration: none;
-      font-size: 1.05rem;
-      font-weight: 700;
-      border-radius: 10px;
-      transition: background-color .2s ease;
+      font-size: 1.3rem;  /* texto maior */
+      font-weight: 800;   /* mais forte */
+      border-radius: 12px;
+      transition: background-color .2s ease, transform .2s ease;
     }
 
     .link-btn i {
-      font-size: 1.2rem;
+      font-size: 1.6rem; /* ícone maior */
       color: var(--yellow);
     }
 
-    .link-btn:hover { background-color: #333; }
+    .link-btn:hover { 
+      background-color: #333; 
+      transform: scale(1.05); /* leve zoom ao passar o mouse */
+    }
 
     footer {
       margin-top: 18px;
@@ -122,6 +125,8 @@
       .container { padding: 0 8px; }
       .character { width: 110vw; opacity: 0.25; }
       .profile-pic { width: 100px; height: 100px; }
+      .link-btn { font-size: 1.1rem; }
+      .link-btn i { font-size: 1.4rem; }
     }
   </style>
 </head>
@@ -134,8 +139,8 @@
     <!-- Foto de perfil -->
     <img src="imagens/profile.jpg" alt="Minha Foto" class="profile-pic">
 
-    <h1>Katak</h1>
-    <p class="bio">Aqui vai uma frase curta sobre você ou seu projeto</p>
+    <h1>Kateh</h1>
+    <p class="bio">Ai cacetinho</p>
 
     <div class="links">
       <a href="https://www.instagram.com/esteffany_valandro" class="link-btn" target="_blank" rel="noopener">
@@ -170,3 +175,4 @@
 
 </body>
 </html>
+
