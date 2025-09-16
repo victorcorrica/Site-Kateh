@@ -26,8 +26,8 @@
       font-family: 'Helvetica Neue', Arial, sans-serif;
       min-height: 100vh;
       background-color: var(--yellow); /* fallback amarelo */
-      /* Imagem de fundo: arquivo deve estar na mesma pasta do index.html */
-      background-image: url("fundolikkateh.png");
+      /* 🎨 FUNDO DO SITE - Troque o nome do arquivo aqui */
+      background-image: url("fundo.png");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -38,7 +38,7 @@
       overflow: hidden;
     }
 
-    /* Personagem PNG grande por trás (arquivo: iconKateh1.png) */
+    /* 🖼️ PERSONAGEM PNG - grande no fundo */
     .character {
       position: absolute;
       top: 50%;
@@ -46,7 +46,7 @@
       transform: translate(-50%, -50%);
       width: 80vw;      /* ocupa 80% da largura da tela */
       max-width: 1200px;/* limite máximo */
-      opacity: 0.30;    /* ajuste para não esconder o conteúdo */
+      opacity: 0.30;    /* transparência */
       z-index: 0;
       pointer-events: none;
     }
@@ -59,6 +59,7 @@
       margin: 0 auto;
     }
 
+    /* 📷 FOTO DE PERFIL */
     .profile-pic {
       width: 120px;
       height: 120px;
@@ -84,6 +85,7 @@
       margin-bottom: 20px;
     }
 
+    /* 🔗 LINKS */
     .links {
       display: flex;
       flex-direction: column;
@@ -120,7 +122,7 @@
       color: var(--black);
     }
 
-    /* Responsivo - adapta em telas bem pequenas */
+    /* Responsivo - telas pequenas */
     @media (max-width: 420px) {
       .container { padding: 0 8px; }
       .character { width: 110vw; opacity: 0.25; }
@@ -130,17 +132,20 @@
 </head>
 <body>
 
-  <!-- Personagem PNG grande no fundo
-       -> arquivo: iconKateh1.png (coloque na mesma pasta do index.html) -->
-  <img src="iconKateh1.png" alt="Personagem" class="character">
+  <!-- 🖼️ PERSONAGEM PNG NO FUNDO -->
+  <!-- Troque "personagem.png" pelo nome da sua imagem -->
+  <img src="personagem.png" alt="Personagem" class="character">
 
   <div class="container">
-    <!-- Foto de perfil (arquivo: profile.jpg) -->
-    <img src="profile.jpg" alt="Minha Foto" class="profile-pic">
+    <!-- 📷 FOTO DE PERFIL -->
+    <!-- Troque "perfil.jpg" pelo nome da sua imagem -->
+    <img src="perfil.jpg" alt="Minha Foto" class="profile-pic">
 
+    <!-- Nome -->
     <h1>Katak</h1>
     <p class="bio">Aqui vai uma frase curta sobre você ou seu projeto</p>
 
+    <!-- 🔗 LINKS PARA REDES SOCIAIS -->
     <div class="links">
       <a href="https://www.instagram.com/esteffany_valandro" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-instagram"></i> Instagram
