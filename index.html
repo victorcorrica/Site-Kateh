@@ -1,147 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Minhas Redes</title>
 
-  <!-- Importando ícones do Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Font Awesome (ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
-    body {
+    :root {
+      --yellow: #FFD700;
+      --black: #111;
+    }
+
+    /* Reset simples */
+    * { box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
       margin: 0;
+    }
+
+    body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       min-height: 100vh;
-      background-color: #FFD700; /* Amarelo */
-      background-image: url("fundolikkateh.png"); /* Fundo */
+      background-color: var(--yellow); /* fallback amarelo */
+      /* Imagem de fundo: arquivo deve estar na mesma pasta do index.html */
+      background-image: url("fundolikkateh.png");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      color: #111;
+      color: var(--black);
       text-align: center;
       padding: 20px;
       position: relative;
       overflow: hidden;
     }
 
-    /* Personagem PNG gigante atrás */
+    /* Personagem PNG grande por trás (arquivo: iconKateh1.png) */
     .character {
       position: absolute;
-      top: 50%;  /* Centraliza verticalmente */
-      left: 50%; /* Centraliza horizontalmente */
-      transform: translate(-50%, -50%); /* Ajusta o centro certinho */
-      width: 80vw;   /* Ocupa 80% da largura da tela */
-      max-width: 1000px; /* Máximo para telas grandes */
-      opacity: 0.3;  /* Transparência para não atrapalhar o texto */
-      z-index: 0;    /* Fica atrás do conteúdo */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw;      /* ocupa 80% da largura da tela */
+      max-width: 1200px;/* limite máximo */
+      opacity: 0.30;    /* ajuste para não esconder o conteúdo */
+      z-index: 0;
       pointer-events: none;
     }
 
-    /* Foto de perfil */
+    /* Conteúdo principal (fica acima do personagem) */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
     .profile-pic {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
       margin-top: 30px;
-      margin-bottom: 20px;
-      border: 2px solid #111;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 16px;
+      border: 2px solid var(--black);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* Nome */
     h1 {
-      font-size: 1.8em;
-      margin: 10px 0 5px;
-      color: #111;
-      position: relative;
-      z-index: 1;
+      font-size: 1.8rem;
+      margin: 6px 0;
+      color: var(--black);
     }
 
-    /* Bio */
     p.bio {
-      font-size: 1em;
+      font-size: 1rem;
       color: #333;
-      margin-bottom: 30px;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 20px;
     }
 
-    /* Links */
     .links {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      max-width: 350px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
+      gap: 14px;
+      margin: 0 auto 30px;
+      padding: 0 10px;
     }
 
     .link-btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 15px;
-      background-color: #111;
-      color: #FFD700;
+      gap: 12px;
+      padding: 14px;
+      background-color: var(--black);
+      color: var(--yellow);
       text-decoration: none;
-      font-size: 1.1em;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: 0.3s;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 10px;
+      transition: background-color .2s ease;
     }
 
     .link-btn i {
-      font-size: 1.2em;
-      color: #FFD700;
+      font-size: 1.2rem;
+      color: var(--yellow);
     }
 
-    .link-btn:hover {
-      background-color: #333;
-    }
+    .link-btn:hover { background-color: #333; }
 
-    /* Rodapé */
     footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #111;
-      position: relative;
-      z-index: 1;
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: var(--black);
+    }
+
+    /* Responsivo - adapta em telas bem pequenas */
+    @media (max-width: 420px) {
+      .container { padding: 0 8px; }
+      .character { width: 110vw; opacity: 0.25; }
+      .profile-pic { width: 100px; height: 100px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Personagem PNG gigante no fundo -->
-  <img src="iconKateh1-png.png" alt="Personagem" class="character">
+  <!-- Personagem PNG grande no fundo
+       -> arquivo: iconKateh1.png (coloque na mesma pasta do index.html) -->
+  <img src="iconKateh1.png" alt="Personagem" class="character">
 
-  <!-- Foto de perfil -->
-  <img src="c:\Users\Administrator\Downloads\Novo Projeto.jpg" alt="Minha Foto" class="profile-pic">
+  <div class="container">
+    <!-- Foto de perfil (arquivo: profile.jpg) -->
+    <img src="profile.jpg" alt="Minha Foto" class="profile-pic">
 
-  <!-- Nome -->
-  <h1>Katak</h1>
+    <h1>Katak</h1>
+    <p class="bio">Aqui vai uma frase curta sobre você ou seu projeto</p>
 
-  <!-- Bio -->
-  <p class="bio">Aqui vai uma frase curta sobre você ou seu projeto</p>
+    <div class="links">
+      <a href="https://www.instagram.com/esteffany_valandro" class="link-btn" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
 
-  <!-- Links -->
-  <div class="links">
-    <a href="https://www.instagram.com/esteffany_valandro?igsh=dXpidnNla2VhaDZh" class="link-btn"><i class="fab fa-instagram"></i> Instagram</a>
-    <a href="https://www.youtube.com/@soukateh" class="link-btn"><i class="fab fa-youtube"></i> YouTube</a>
-    <a href="https://www.tiktok.com/@soukateh" class="link-btn"><i class="fab fa-tiktok"></i> TikTok</a>
-    <a href="https://x.com/SouKateh?t=iMF9ZN-zBD4pMWa6MKJ4Bw&s=09" class="link-btn"><i class="fab fa-x-twitter"></i> Twitter (X)</a>
-    <a href="https://discord.gg/BEye7nkC" class="link-btn"><i class="fab fa-discord"></i> Discord</a>
-    <a href="https://www.twitch.tv/soukateh" class="link-btn"><i class="fab fa-twitch"></i> Twitch</a>
+      <a href="https://www.youtube.com/@soukateh" class="link-btn" target="_blank" rel="noopener">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+
+      <a href="https://www.tiktok.com/@soukateh" class="link-btn" target="_blank" rel="noopener">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+
+      <a href="https://x.com/SouKateh" class="link-btn" target="_blank" rel="noopener">
+        <i class="fab fa-x-twitter"></i> Twitter (X)
+      </a>
+
+      <a href="https://discord.gg/BEye7nkC" class="link-btn" target="_blank" rel="noopener">
+        <i class="fab fa-discord"></i> Discord
+      </a>
+
+      <a href="https://www.twitch.tv/soukateh" class="link-btn" target="_blank" rel="noopener">
+        <i class="fab fa-twitch"></i> Twitch
+      </a>
+    </div>
+
+    <footer>
+      <p>© 2025 Katak | Todos os direitos reservados</p>
+    </footer>
   </div>
-
-  <!-- Rodapé -->
-  <footer>
-    <p>© 2025 Katak | Todos os direitos reservados</p>
-  </footer>
 
 </body>
 </html>
